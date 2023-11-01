@@ -10,8 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- nhúng css -->
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+    
+    <!-- https://firebase.google.com/docs/web/setup#available-libraries -->
     <audio src="./music/nghenhutinhyeu.mp3" id="audio"></audio>
     <div class="container">
         <div class="left">
@@ -110,10 +113,62 @@
                         </div>
                     </div>
                     <div class="playlist-top-email">
-                        <div class="arr-container">
+                        <button data-open-modal class="login" id = "login">Login</button>
+                        <div data-overplay class="overplay"></div>
+                        <div data-modal class="modal">
+                            <button data-close-modal class="close" id="close"><i class="fa-solid fa-xmark"></i></button>
+                            <div class="container-form">
+                                <div class="form-area">
+                                    <p class="title-form">Login</p>
+                                    <form action="" onsubmit="login(event)">
+                                        <div class="form-group">
+                                            <label class="sub-title" id="email-access" for="email">Email</label>
+                                            <input type="text" placeholder="Enter your email" name="email" class="form-style">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sub-title" id="password-access" for="password">Password</label>
+                                            <input type="password" placeholder="Enter your password" name="password" class="form-style">
+                                        </div>
+                                        <div>
+                                            <button class="btnLog">Submit</button>
+                                            <p class="text">Don't have an Account? <a class="link" href="">Sign Up Here</a></p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <button data-open-modal1 class="signup" id="signup">Sign Up</button>
+                        <div data-overplay1 class="overplay"></div>
+                        <div data-modal1 class="modal">
+                            <button data-close-modal1 class="close" id="close"><i class="fa-solid fa-xmark"></i></button>
+                            <div class="container-form">
+                                <div class="form-area">
+                                    <p class="title-form">Sign Up</p>
+                                    <form action="" onsubmit="signup(event)">
+                                        <div class="form-group">
+                                            <label class="sub-title" for="name">Name</label>
+                                            <input type="text" placeholder="Enter your fullname" id="name" class="form-style">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sub-title" for="email">Email</label>
+                                            <input type="text" placeholder="Enter your email" id="email" class="form-style">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sub-title" for="password">Password</label>
+                                            <input type="password" placeholder="Enter your password" id="password" class="form-style">
+                                        </div>
+                                        <div>
+                                            <button class="btnLog">Submit</button>
+                                            <p class="text">Already have an Account? <a class="link" href="">Login Here</a></p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="arr-container">
                             <img src="./img/profile.png" alt="" width="35px">
                         </div>
-                        <span>Nguyễn Thành Đạt</span>
+                        <span>Nguyễn Thành Đạt</span> -->
                     </div>
                 </div>
                 <div class="playlist-content">
@@ -160,18 +215,18 @@
                         <div class="playlist-btn-search">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
-                        <div class="playlist-btn-order">
+                        <dialog class="playlist-btn-order">
                             Custom Order
                             <span><i class="fa-solid fa-caret-down" style="color: #fafcff;"></i></span>
-                        </div>
+                        </dialog>
                     </div>
                 </div>
                 <div class="playlist-songs" id="playlist">
-                    <table>
-                        <tr>
+                    <table id="albumSong">
+                        <tr id="categories">
                             <th>#</th>
                             <th>Title</th>
-                            <th>Album</th>
+                            <th><button onclick="sortTable()">Album</button></th>
                             <th>View</th>
                             <th><i class="fa-solid fa-clock"></i></th>
                         </tr>
@@ -319,7 +374,7 @@
     <div class="footer-player" id="player">
         <div class="footer-player-left">
             <div class="footer-player-left-song-image">
-                <img src="./img/nghenhutinhyeu.jpg" alt="" width="40px"height="40px">
+                <img id="player-song-img" src="./img/nghenhutinhyeu.jpg" alt="" width="40px"height="40px">
             </div>
             <div class="footer-player-left-song">
                 <div id="player-song-name" class="footer-player-left-song-name">Nghe như tình yêu</div>
@@ -355,10 +410,17 @@
                 <div class="player-time time-end" id="time-end">03:13</div>
             </div>
         </div>
+        <audio src="./music/sangvoicerapperso1vietnam.mp4"></audio>
         <div class="footer-player-right">
             <div class="footer-player-right-btns">
                 <img src="./img/mic.png" alt="">
-                <img src="./img/list.png" alt="">
+                <button class="user-list-song" id="user-list">
+                    <i class="fa-solid fa-list-ul" style="color: #ffffff;"></i>
+                </button>
+                <dialog id="dialog-user-playlist">
+                    <button class="closeDialog" id="closeDialog"><i class="fa-solid fa-xmark"></i></button>
+                    <div class="user-list-container">My Playlist</div>
+                </dialog>
                 <img src="./img/device.png" alt="">
                 <div class="volume-control">
                     <div class="volume-btn">
@@ -377,5 +439,8 @@
     </div>  
     <!-- nhúng js -->
     <script src="./project.js"></script>
+    <!-- <script type="module" src="./login.js"></script> -->
+    <script type="module" src="./signup.js"></script>
+    <!-- <script src="./register.js"></script> -->
 </body>
 </html>

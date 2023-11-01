@@ -2,11 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Readex+Pro&display=swap');
 /* Font Kanit */
 @import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Kanit&display=swap');
-
-:root {
+/* Font Roboto Salb */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Readex+Pro&family=Roboto+Slab:wght@200;500&display=swap');:root {
     --heart-color: #eb2f06;
     --background-color : #1C1C1C;
     --background-letter-color: #C6C6C6;
+    --background-modal:white;
+    --text-color-modal:#636e72;
+    --box-shadow-modal:#b2bec3;
 }
 
 html,body,*{
@@ -61,20 +64,19 @@ body {
 }
 .menu ul li{
     padding: 9px;
-    padding-left: 0 !important;
+    /* padding-left: 0 !important; */
 }
 .menu a {
     text-decoration: none;
-    color: #F7B318;
-    /* chữ màu xám */
-    /* color: var(--background-letter-color); */
+    color: var(--background-letter-color);
 }
-.menu li *:hover {
-    font-size: 15px;
+.menu li:hover,.menu li span:hover {
+    background-color: black;
+    transform: scale(1.01);
     cursor: pointer;
-    :active{
-        transform: scale(1.04);
-    }
+}
+.menu li:active,.menu li span:active {
+    transform: scale(0.98);
 }
 .menu span {
     position: relative;
@@ -120,18 +122,38 @@ body {
 .playlist-top-email {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
-    background-color: #b2bec3;
-    border: 1px solid #636e72;
-    border-radius: 15px;
+    width: 150px;
+    height: 20px;
 }
-.playlist-top-email > .arr-containeer{
+.login, .signup {
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    font-size: 13px;
+    border: 1px solid white;
+    color: white;
+    background: transparent ;
+}
+.login {
+    margin-right: 5px;
+}
+.login:hover, .signup:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+.login:active, .signup:active {
+    transform: scale(0.97);
+}
+/* .playlist-top-email > .arr-containeer{
     padding: 15px;
     background-color: white;
 }
 .playlist-top-email span {
     padding: 0 20px;
-}
+} */
 
 #myVideo {
     position: absolute;
@@ -254,7 +276,6 @@ body {
 /* Phần playlist songs */
 .playlist-songs {
     margin-top: 20px;
-    overflow: scroll;
     display: block;
     /* P1: muốn chỉnh màu chữ ở bên tay phải ở playlist-songs thì chỉnh ở đây */
     color: var(--background-letter-color);
@@ -267,6 +288,13 @@ body {
     font-weight: 800;
     font-size: 15px;
     letter-spacing: 2px;
+}
+.playlist-songs table tr th button {
+    background: transparent;
+    border: 1px solid var(--background-color);
+    color: white;
+    font-size: 15px;
+    font-weight: 800;
 }
 .playlist-songs table tr:first-child {
     border-bottom: 1px solid white;
@@ -307,7 +335,7 @@ body {
 .playlist-songs tr:hover {
     background: rgba(0,0,0,0.2);
     color: white;
-    transform: scale(1.005);
+    transform: scale(1.0005);
     cursor: pointer;
 }
 /* Phần footer */
@@ -337,8 +365,9 @@ body {
     font-weight: 600;
 }
 .footer-player-left-like{
-    padding-left: 40px;
+    margin-left: 30px;
 }
+  
 .footer-player-left-song-image {
     padding: 7px 5px 1px 1px;
 }
@@ -459,6 +488,8 @@ body {
 }
 .footer-player-right-btns {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
     margin-right: 20px;
 }
@@ -466,4 +497,145 @@ body {
     width: 18px;
     height: 18px;
     margin-right: 15px;
+}
+
+/* modal */
+.modal .close {
+    left: auto;
+}
+.overplay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9;
+}
+.modal.open , .overplay.open {
+    display: block;
+}
+.modal{
+    display: none;
+    position: fixed;
+    padding: 0.5rem;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background-color: var(--background-modal);
+    border-radius: 20px;
+    border: 2px solid #264143;
+    box-shadow: 3px 4px 0px 1px var(--box-shadow-modal);
+    z-index: 10;
+    width: auto;
+    height: auto;
+}
+.container-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.title-form {
+    color: #0984e3;
+    font-weight: 900;
+    font-size: 1.8em;
+    font-family: 'Roboto Slab';
+    margin-top: 20px;
+}
+.sub-title {
+    font-weight: 600;
+    margin: 5px 0;
+    color: var(--text-color-modal);
+    font-weight: 200;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin: 10px;
+}
+.form-style {
+    outline: none;
+    border: 2px solid #264143;
+    box-shadow: 3px 4px 0px 1px var(--box-shadow-modal);
+    width: 290px;
+    font-family: 'Roboto Slab';
+    font-weight: 400 ;
+    padding: 12px 10px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+.form-style:focus, .btnLog:focus {
+    transform: translateY(4px);
+    box-shadow: 1px 2px 0px 0px var(--box-shadow-modal);
+}
+.btnLog {
+    padding: 15px;
+    margin: 25px 0px;
+    width: 290px;
+    font-size: 15px;
+    color: white;
+    background: #0984e3;
+    border-radius: 10px;
+    font-weight: 800;
+    box-shadow: 3px 3px 1px 1px var(--box-shadow-modal);
+}
+.btnLog:hover {
+    opacity: .9;
+}
+.link {
+    font-weight: 800;
+    color: #264143;
+    padding: 5px;
+}
+.link:hover{
+    cursor: pointer;
+    color: black;
+}
+.text {
+    color:var(--text-color-modal);
+}
+.close {
+    margin-left: 90%;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid var(--background-modal);
+    font-size:20px;
+    :hover {
+        cursor: pointer;    
+        color: var(--text-color-modal);
+        transform: scale(1.3);
+    }
+    :active {
+        transform: scale(0.96);
+    }
+}
+.user-list-song {
+    margin: 0 5px 0 2px;
+    background: transparent ;
+    border: 1px solid black;
+}
+#dialog-user-playlist {
+    height: 100%;
+    width: 300px;
+    margin-right: 0;
+    border: 1px solid transparent ;
+}
+.closeDialog {
+    margin: 0 280px 0;
+    background: transparent;
+    border: 1px solid white;
+    font-size: 20px;
+    transition: 0.1s ease-in-out;
+    :hover {
+        font-size: 22px;
+    }
+    :active {
+        transform: scale(0.94);
+    }
+}
+.user-list-container {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
 }
