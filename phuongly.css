@@ -3,7 +3,11 @@
 /* Font Kanit */
 @import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Kanit&display=swap');
 /* Font Roboto Salb */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Readex+Pro&family=Roboto+Slab:wght@200;500&display=swap');:root {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Readex+Pro&family=Roboto+Slab:wght@200;500&display=swap');
+/* Font Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+:root {
     --heart-color: #eb2f06;
     --background-color : #1C1C1C;
     --background-letter-color: #C6C6C6;
@@ -140,8 +144,9 @@ body {
     margin-right: 5px;
 }
 .login:hover, .signup:hover {
-    background-color: white;
+    background: linear-gradient(to right, #d9a7c7, #fffcdc);
     color: black;
+    border: 1px solid white;
     cursor: pointer;
 }
 .login:active, .signup:active {
@@ -155,7 +160,7 @@ body {
     padding: 0 20px;
 } */
 
-#myVideo {
+.poster-header {
     position: absolute;
     left: 0;
     top:0;
@@ -270,15 +275,15 @@ body {
 }
 .playlist-song-container {
     color: white;
-    background-color: var(--background-color);
+    background: rgb(180,90,130);
+    background: linear-gradient(to bottom, rgba(180,90,130,1) 0%, rgba(118,58,85,1) 16%, rgba(0,0,0,1) 100%, rgba(255,0,133,1) 100%);
 }
-
 /* Phần playlist songs */
 .playlist-songs {
     margin-top: 20px;
     display: block;
     /* P1: muốn chỉnh màu chữ ở bên tay phải ở playlist-songs thì chỉnh ở đây */
-    color: var(--background-letter-color);
+    color: white;
 }
 .playlist-songs table {
     border-collapse: collapse;
@@ -301,15 +306,11 @@ body {
     font-size:14px;
     margin-top: 6px;
     /* P2: muốn chỉnh màu chữ ở bên tay phải ở playlist-songs thì chỉnh ở đây */
-    color: var(--background-letter-color);
-}
-.song-album{
-    padding-right: 90px;
-    width: 200px;
+    color: white;
 }
 .song-view{
     width: 100px;
-    padding: 0 150px 0 120px;
+    padding: 0 350px 0 0;
 }
 .song-title {
     display: flex;
@@ -323,14 +324,21 @@ body {
     padding-left: 20px;
     width: 40px;
 }
+.view {
+    padding: 0 20px 0 100px;
+}
+.fa-clock {
+    padding-right: 5px;
+}
 .song-image img {
     width: 36px;
     height: 34px;
     margin-top: 10px;
 }
 .song-name {
-    font-weight: 400;
-    font-size: 15px;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: 'Roboto';
 }
 .song-name-artist, .song-name, .song-artist {
     padding-left: 5px;
@@ -421,8 +429,7 @@ body {
 }
 .play-btn button {
     background: #83a4d4;
-    background: -webkit-linear-gradient(to right, #83a4d4, #b6fbff);
-    background: linear-gradient(to right, #83a4d4, #b6fbff);
+    background: linear-gradient(to right, #ddd6f3, #faaca8);
     border-radius: 50%;
     width: 45px;
     height: 45px;
@@ -448,22 +455,26 @@ body {
 }
 .player-slider input {
     width: 40vw;
-    height: 3px;
+    height: 3px;    
     -webkit-appearance: none;
     background: #636e72;
     border-radius: 5px;
     border: none;
     outline: none;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .player-slider input::-webkit-slider-thumb{
     -webkit-appearance: none;
-    height: 4px;
-    width: 4px;
+    height: 45px;
+    width: 45px;
+    background-image: url(https://www.nyan.cat/cats/technyancolor.gif);
+    background-size: 45px;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-color: red; */
     border-radius: 50%;
-    background: #dfe6e9;
     cursor: pointer;
-    box-shadow: -400px 0 0 400px #f5f6fa;
+    box-shadow: -400px 0 0 400px transparent ;
 }
 .player-time {
     padding: 0 10px;
@@ -489,7 +500,6 @@ body {
     width: 6rem;
     position: relative;
     margin-right: 10px;
-    
 }
 .footer-player-right-btns {
     display: flex;
@@ -681,7 +691,8 @@ body {
 
 .song-add-left:hover {
     cursor: pointer;
-    background-color: #3d3d3d;
+    background: rgb(247,247,247);
+    background: linear-gradient(90deg, rgba(247,247,247,0.4985643915769433) 0%, rgba(255,255,255,0.49576327112876406) 100%);
     & .my-btn {
         display: block;
     }
@@ -699,8 +710,8 @@ body {
     display: none;
     font-size: 25px;
     background: transparent;
+    border: 1px solid transparent ;
     color: white;
-    border: 1px solid #3d3d3d;
 }
 .minusBTN {
     background: transparent;
@@ -721,11 +732,4 @@ body {
 .material-symbols-outlined {
     font-size: 25px;
     display: none;
-}
-/* Thanh tìm kiếm  */
-.input:hover {
-    cursor: pointer;
-}
-.icon {
-    color: white;
 }

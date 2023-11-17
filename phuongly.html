@@ -13,13 +13,13 @@
     <!-- Google Icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- nhúng css -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="phuongly.css">
 
 </head>
 <body>
     
     <!-- https://firebase.google.com/docs/web/setup#available-libraries -->
-    <audio src="./music/nghenhutinhyeu.mp3" id="audio"></audio>
+    <audio src="./music/anhlangoailecuaem.mp3" id="audio"></audio>
     <div class="container">
         <div class="left">
             <div class="menu">
@@ -62,12 +62,12 @@
             <div class="menu playlist">
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="index.html">
                             <span>Ai Cũng Phải Bắt Đầu Từ Đâu Đó</span>
                         </a>
                     </li>
                     <li>
-                        <a href="phuongly.html">
+                        <a href="#">
                             <span>Anh Là Ngoại Lệ Của Em</span>
                         </a>
                     </li>
@@ -106,7 +106,7 @@
         </div>
         <div class="right">
             <div class="playlist-header">
-                <video autoplay mute loop src="./img/backgroundheader.mp4" type="video/mp4" id="myVideo"></video>
+                <img src="./img/chiphuongly.jpeg" class="poster-header" alt="">
                 <div class="playlist-top">
                     <div class="playlist-arrow">
                         <div class="arr-container">
@@ -177,7 +177,7 @@
                 </div>
                 <div class="playlist-content">
                     <div class="playlist-cover">
-                        <img src="./img/posterhth.jpg" alt="">
+                        <img src="./img/posterphuongly.jpeg" alt="">
                     </div>
                     <div class="playlist-info">
                         <div class="playlist-public">
@@ -185,15 +185,10 @@
                                 <img src="./img/checkicon.png" alt="">
                                 <span>Verified Artist</span>
                             </div>
-                            <div class="playlist-title">Vũ Trụ HIEUTHUHAI</div>
-                            <div class="playlist-description">Chào mừng bạn đến với vũ trụ âm nhạc của HIEUTHUHAI!</div>
+                            <div class="playlist-title">Phương Ly</div>
                         </div>
                         <div class="playlist-stats">
-                            <span><img src="./img/achivement.png" alt=""width="25px"></span>
-                            <span>890,283 monthly listeners ·  </span>
-                            <span>156 likes · </span>
-                            <span>20 songs, </span>
-                            <span>1 hr 6 min </span>
+                            <span>1,047,507 monthly listeners ·  </span>
                         </div>
                     </div>
                 </div>
@@ -216,10 +211,9 @@
                         </div>
                     </div>
                     <div class="playlist-btn-right">
-                        <div class="group">
-                            <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
-                            <input placeholder="Search" type="search" class="input">
-                          </div>
+                        <div class="playlist-btn-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
                         <div class="playlist-btn-order">
                             Custom Order
                             <span><i class="fa-solid fa-caret-down" style="color: #fafcff;"></i></span>
@@ -232,8 +226,7 @@
                                     <table cellspacing="0" cellpadding="1" width="300" class="second-table">
                                         <th>#</th>
                                         <th>Title</th>
-                                        <th>Album</th>
-                                        <th>View</th>
+                                        <th class="view">View</th>
                                         <th><i class="fa-solid fa-clock"></i></th>
                                     </table>
                             </tr>
@@ -246,18 +239,16 @@
                                         </td>
                                         <td class="song-title">
                                             <div class="song-image">
-                                                <img src="./img/nghenhutinhyeu.jpg" alt="" width="50px">
+                                                <img src="./img/anhlangoailecuaem.jpeg" alt="" width="50px">
                                             </div>
                                             <div class="song-name-artist" >
                                                 <div class="song-name">
-                                                    Nghe như tình yêu
+                                                    Anh là ngoại lệ của em
                                                 </div>
-                                                <div class="song-artist">HIEUTHUHAI</div>
                                             </div>   
                                         </td>
-                                        <td class="song-album">Single</td>
-                                        <td class="song-view">12,819,341</td>
-                                        <td class="song-duration">3:13</td>
+                                        <td class="song-view">3,619,056</td>
+                                        <td class="song-duration">3:08</td>
                                     </tr>
                                     <tr class="song-add-left">
                                         <td class="song-stt"><p class="stt">2</p>
@@ -265,18 +256,16 @@
                                         </td>
                                         <td class="song-title">
                                             <div class="song-image">
-                                                <img src="./img/khongthesay.jpg" alt="" width="50px">
+                                                <img src="./img/thangdien.jpeg" alt="" width="50px">
                                             </div>
                                             <div class="song-name-artist" >
                                                 <div class="song-name">
-                                                    Không thể say
+                                                    Thằng điên
                                                 </div>
-                                                <div class="song-artist">HIEUTHUHAI</div>
                                             </div>   
-                                            <td class="song-album">Ai cũng phải bắt đầu từ đâu đó</td>
                                         </td>
-                                        <td class="song-view">7,263,419</td>
-                                        <td class="song-duration">3:48</td>
+                                        <td class="song-view">14,839,805</td>
+                                        <td class="song-duration">3:54</td>
                                     </tr>
                                     <tr class="song-add-left">
                                         <td class="song-stt"><p class="stt">3</p>
@@ -284,18 +273,16 @@
                                         </td>
                                         <td class="song-title">
                                             <div class="song-image">
-                                                <img src="./img/giothiaicuoi.jpg" alt="" width="50px">
+                                                <img src="./img/thichthich.jpeg" alt="" width="50px">
                                             </div>
                                             <div class="song-name-artist" >
                                                 <div class="song-name">
-                                                    Giờ thì ai cười
+                                                    ThichThich
                                                 </div>
-                                                <div class="song-artist">HIEUTHUHAI</div>
                                             </div>   
-                                            <td class="song-album">Ai cũng phải bắt đầu từ đâu đó</td>
                                         </td>
-                                        <td class="song-view">391,772</td>
-                                        <td class="song-duration">3:05</td>
+                                        <td class="song-view">13,210,178</td>
+                                        <td class="song-duration">4:01</td>
                                     </tr>
                                     <tr class="song-add-left">
                                         <td class="song-stt"><p class="stt">4</p>
@@ -303,18 +290,16 @@
                                         </td>
                                         <td class="song-title">
                                             <div class="song-image">
-                                                <img src="./img/ngumotminh.jpg" alt="" width="50px">
+                                                <img src="./img/mattroicuaem.jpeg" alt="" width="50px">
                                             </div>
                                             <div class="song-name-artist" >
                                                 <div class="song-name">
-                                                    Ngủ một mình
+                                                    Mặt trời của em
                                                 </div>
-                                                <div class="song-artist">HIEUTHUHAI,Negav,Kewtiie</div>
                                             </div>   
-                                            <td class="song-album">Single</td>
                                         </td>
-                                        <td class="song-view">13,911,268</td>
-                                        <td class="song-duration">3:12</td>
+                                        <td class="song-view">7,001,477</td>
+                                        <td class="song-duration">4:09</td>
                                     </tr>
                                     <tr class="song-add-left">
                                         <td class="song-stt"><p class="stt">5</p>
@@ -322,18 +307,16 @@
                                         </td>
                                         <td class="song-title">
                                             <div class="song-image">
-                                                <img src="./img/cua.jpg" alt="" width="50px">
+                                                <img src="./img/missingyou.jpeg" alt="" width="50px">
                                             </div>
                                             <div class="song-name-artist" >
                                                 <div class="song-name">
-                                                    Cua
+                                                    Missing you
                                                 </div>
-                                                <div class="song-artist">HIEUTHUHAI,Manbo</div>
                                             </div>   
-                                            <td class="song-album">Single</td>
                                         </td>
-                                        <td class="song-view">6,563,356</td>
-                                        <td class="song-duration">3:13</td>
+                                        <td class="song-view">12,175,165</td>
+                                        <td class="song-duration">4:02</td>
                                     </tr>
                                     <tr class="song-add-left">
                                         <td class="song-stt"><p class="stt">6</p>
@@ -341,18 +324,16 @@
                                         </td>
                                         <td class="song-title">
                                             <div class="song-image">
-                                                <img src="./img/nghenhutinhyeu.jpg" alt="" width="50px">
+                                                <img src="./img/soclose.jpeg" alt="" width="50px">
                                             </div>
                                             <div class="song-name-artist" >
                                                 <div class="song-name">
-                                                    Nghe như tình yêu
+                                                    So Close
                                                 </div>
-                                                <div class="song-artist">HIEUTHUHAI</div>
                                             </div>   
-                                            <td class="song-album">Nghe như tình yêu</td>
                                         </td>
-                                        <td class="song-view">12,819,341</td>
-                                        <td class="song-duration">3:13</td>
+                                        <td class="song-view">7,471,425</td>
+                                        <td class="song-duration">3:19</td>
                                     </tr>
                                     <tr class="song-add-left">
                                         <td class="song-stt">
@@ -363,38 +344,18 @@
                                         </td>
                                         <td class="song-title">
                                             <div class="song-image">
-                                                <img src="./img/nghenhutinhyeu.jpg" alt="" width="50px">
+                                                <img src="./img/anhlaai.jpeg" alt="" width="50px">
                                             </div>
                                             <div class="song-name-artist" padding-left: 15px>
                                                 <div class="song-name">
-                                                    Nghe như tình yêu
+                                                    Anh là ai
                                                 </div>
-                                                <div class="song-artist">HIEUTHUHAI</div>
                                             </div>   
-                                            <td class="song-album">Nghe như tình yêu</td>
                                         </td>
-                                        <td class="song-view">12,819,341</td>
-                                        <td class="song-duration">3:13</td>
+                                        <td class="song-view">1,636,583</td>
+                                        <td class="song-duration">4:17</td>
                                     </tr>
-                                    <tr class="song-add-left">
-                                        <td class="song-stt"><p class="stt">8</p>
-                                            <button class="my-btn"> <i class="bi bi-play-circle-fill" ></i> </button>
-                                        </td>
-                                        <td class="song-title">
-                                            <div class="song-image">
-                                                <img src="./img/nghenhutinhyeu.jpg" alt="" width="50px">
-                                            </div>
-                                            <div class="song-name-artist">
-                                                <div class="song-name">
-                                                    Nghe như tình yêu
-                                                </div>
-                                                <div class="song-artist">HIEUTHUHAI</div>
-                                            </div>   
-                                            <td class="song-album">Nghe như tình yêu</td>
-                                        </td>
-                                        <td class="song-view">12,819,341</td>
-                                        <td class="song-duration">3:13</td>
-                                    </tr>
+                                    
                                 </table>
                             <!-- </tr> -->
                       </table>
@@ -406,11 +367,11 @@
     <div class="footer-player" id="player">
         <div class="footer-player-left">
             <div class="footer-player-left-song-image">
-                <img id="player-song-img" src="./img/nghenhutinhyeu.jpg" alt="" width="40px"height="40px">
+                <img id="player-song-img" src="./img/anhlangoailecuaem.jpeg" alt="" width="40px"height="40px">
             </div>
             <div class="footer-player-left-song">
-                <div id="player-song-name" class="footer-player-left-song-name">Nghe như tình yêu</div>
-                <div id="player-artist-name" class="footer-player-left-song-artist">HIEUTHUHAI</div>
+                <div id="player-song-name" class="footer-player-left-song-name">Anh là ngoại lệ của em</div>
+                <div id="player-artist-name" class="footer-player-left-song-artist">Phương Ly</div>
             </div>
                 <div class="footer-player-left-like" id="addPlaylist">
                     <img src="./img/heart.png" alt="" width="22px">
@@ -484,14 +445,11 @@
                         <div class="volume-progress"></div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>  
     <!-- nhúng js -->
-    <script src="./project.js"></script>
-    <!-- <script type="module" src="./login.js"></script> -->
-    <script type="module" src="./signup.js"></script>
+    <script src="phuongly.js"></script>
     <script src="./event.js"></script>
 </body>
 </html>

@@ -196,11 +196,13 @@ repeatBTN.addEventListener('click',function(){
         repeatBTN.classList.remove('active');
         audio.loop = false;
         console.log("repeat off");
+        repeatBTN.style.backgroundColor = '';
     }
     else{
         repeatBTN.classList.add('active');
         audio.loop = true;
         console.log("repeat on");
+        repeatBTN.style.backgroundColor = 'black';
     }
 })
 //nút shuffle song ( phát ngẫu nhiên)
@@ -306,144 +308,82 @@ closeDialog.addEventListener('click', function(){
 var songs = [
     {
         "id":1,
-        "song_name": "Nghe như tình yêu",
-        "artist_name": "HIEUTHUHAI",
-        "song_src":"./music/nghenhutinhyeu.mp3",
-        "song_img": "./img/nghenhutinhyeu.jpg"
+        "song_name": "Anh là ngoại lệ của em",
+        "artist_name": "Phương Ly",
+        "song_src":"./music/anhlangoailecuaem.mp3",
+        "song_img": "./img/anhlangoailecuaem.jpeg"
     },
     {
         "id":2,
-        "song_name": "Không chỉ là thoáng qua",
-        "artist_name": "wAvy, Vũ Thảo My",
-        "song_src":"./music/khongchilathoangqua.mp4",
-        "song_img": "./img/khongchilathoangqua.jpeg"
+        "song_name": "Mặt trời của em",
+        "artist_name": "Phương Ly",
+        "song_src":"./music/mattroicuaem.mp3",
+        "song_img": "./img/mattroicuaem.jpeg"
     },
     {
         "id":3,
-        "song_name": "Giờ thì ai cười",
-        "artist_name": "HIEUTHUHAI",
-        "song_src":"./music/giothiaicuoi.mp3",
-        "song_img": "./img/giothiaicuoi.jpg"
+        "song_name": "ThichThich",
+        "artist_name": "Phương Ly",
+        "song_src":"./music/thichthich.mp3",
+        "song_img": "./img/thichthich.jpeg"
     },
     {
         "id":4,
-        "song_name": "Vệ tinh",
-        "artist_name": "HIEUTHUHAI, Hoàng Tôn, Kewtiie",
-        "song_src":"./music/vetinh.mp3",
-        "song_img": "./img/vetinh.jpg"
+        "song_name": "Thằng điên",
+        "artist_name": "Phương Ly",
+        "song_src":"./music/thangdien.mp3",
+        "song_img": "./img/thangdien.jpeg"
     },
     {
         "id":5,
-        "song_name": "Bật Nhạc Lên",
-        "artist_name": "HIEUTHUHAI, Harmonie",
-        "song_src":"./music/batnhaclen.mp3",
-        "song_img": "./img/batnhaclen.jpeg"
+        "song_name": "Missing you",
+        "artist_name": "Phương Ly",
+        "song_src":"./music/missingyou.mp3",
+        "song_img": "./img/missingyou.jpeg"
     },
     {
         "id":6,
-        "song_name": "Cua",
-        "artist_name": "HIEUTHUHAI, Manbo",
-        "song_src":"./music/cua.mp3",
-        "song_img": "./img/cua.jpg"
+        "song_name": "So Close",
+        "artist_name": "Phương Ly, Binz",
+        "song_src":"./music/soclose.mp3",
+        "song_img": "./img/soclose.jpeg"
     },
     {
         "id":7,
-        "song_name": "Một công đôi việc",
-        "artist_name": "HURRYKNG, HIEUTHUHAI",
-        "song_src":"./music/motcongdoiviec.mp3",
-        "song_img": "./img/motcongdoiviec.jpg"
-    },
-    {
-        "id":8,
-        "song_name": "Không thể say",
-        "artist_name": "HIEUTHUHAI",
-        "song_src":"./music/khongthesay.mp3",
-        "song_img": "./img/khongthesay.jpg"
-    },
-    {
-        "id":9,
-        "song_name": "LAVIAI",
-        "artist_name": "HIEUTHUHAI, Wrxdie, 2PILLZ",
-        "song_src":"./music/laviairemix.mp3",
-        "song_img": "./img/laviai.jpg"
-    },
-    {
-        "id":10,
-        "song_name": "Xích thêm chút",
-        "artist_name": "MCK, tlinh, RPT Groovie",
-        "song_src":"./music/xichthemchut.mp3",
-        "song_img": "./img/xichthemchut.jpg"
-    },
-    {
-        "id":11,
-        "song_name": "Mắt xanh",
-        "artist_name": "Gill, tlinh, Kewtiie",
-        "song_src":"./music/matxanh.mp3",
-        "song_img": "./img/matxanh.jpg"
-    },
-    {
-        "id":12,
-        "song_name": "Đánh đổi",
-        "artist_name": "Obito",
-        "song_src":"./music/danhdoi.mp3",
-        "song_img": "./img/danhdoi.jpg"
-    },
-    {
-        "id":13,
-        "song_name": "Nhi Nhúng Nhảy",
-        "artist_name": "A Seng quán quân RapViet mùa 4",
-        "song_src":"./music/sangvoicerapperso1vietnam.mp4",
-        "song_img": "./img/aseng.jpg"
+        "song_name": "Anh là ai",
+        "artist_name": "Phương Ly",
+        "song_src":"./music/anhlaai.mp3",
+        "song_img": "./img/anhlaai.jpeg"
     }
 ]
 
 var downSong = [
     {
-        "song_name": "Nghe như tình yêu",
-        "song_src":"https://github.com/dgeniust/audio-data/raw/main/nghenhutinhyeu.mp3"
+        "song_name": "Anh là ngoại lệ của em",
+        "song_src":"https://github.com/dgeniust/audio-data/raw/main/anhlangoailecuaem.mp3"
     },
     {
-        "song_name": "Không chỉ là thoáng qua",
-        "song_src":"https://github.com/dgeniust/audio-data/raw/main/khongchilathoangqua.mp4"
+        "song_name": "Mặt trời của em",
+        "song_src":"https://github.com/dgeniust/audio-data/raw/main/mattroicuaem.mp3"
     },
     {
-        "song_name": "Giờ thì ai cười",
-        "song_src":"https://github.com/dgeniust/audio-data/raw/main/giothiaicuoi.mp3"
+        "song_name": "ThichThich",
+        "song_src":"https://github.com/dgeniust/audio-data/raw/main/thichthich.mp3"
     },
     {
-        "song_name": "Vệ tinh",
-        "song_src":"https://github.com/dgeniust/audio-data/raw/main/vetinh.mp3"
+        "song_name": "Thằng điên",
+        "song_src":"https://github.com/dgeniust/audio-data/raw/main/thangdien.mp3"
     },
     {
-        "song_name": "Bật Nhạc Lên",
-        "song_src":"https://github.com/dgeniust/audio-data/raw/main/batnhaclen.mp3"
+        "song_name": "Missing you",
+        "song_src":"https://github.com/dgeniust/audio-data/raw/main/missingyou.mp3"
     },
     {
-        "song_name": "Cua",
-        "song_src":"https://github.com/dgeniust/audio-data/raw/main/cua.mp3"
+        "song_name": "So close",
+        "song_src":"https://github.com/dgeniust/audio-data/raw/main/soclose.mp3"
     },
     {
-        "song_name": "Một công đôi việc",
-        "song_src":"https://github.com/dgeniust/audio-data/raw/main/motcongdoiviec.mp3"
-    },
-    {
-        "song_name": "Không thể say",
-        "song_src":"https://github.com/dgeniust/audio-data/raw/main/khongthesay.mp3"
-    },
-    {
-        "song_name": "LAVIAI",
-        "song_src":"https://github.com/dgeniust/audio-data/raw/main/laviairemix.mp3"
-    },
-    {
-        "song_name": "Xích thêm chút",
-        "song_src":"https://github.com/dgeniust/audio-data/raw/main/xichthemchut.mp3"
-    },
-    {
-        "song_name": "Mắt xanh",
-        "song_src":"https://github.com/dgeniust/audio-data/raw/main/matxanh.mp3"
-    },
-    {
-        "song_name": "Đánh đổi",
-        "song_src":"https://github.com/dgeniust/audio-data/raw/main/danhdoi.mp3"
-    },
+        "song_name": "Anh là ai",
+        "song_src":"https://github.com/dgeniust/audio-data/raw/main/anhlaai.mp3"
+    }
 ]
