@@ -234,7 +234,7 @@ download.addEventListener('click',function(){
 });
 
 //thanh âm lượng 
-volumeRange.addEventListener('input', function(e){
+volumeRange.addEventListener('input', function(){
     volumeProgress.style.width = volumeRange.value + "%";
     music.volume = volumeRange.value / 100;
     if(volumeRange.value <=0)

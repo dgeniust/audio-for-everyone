@@ -224,6 +224,10 @@ body {
 .playlist-btn-rp{
     padding-right: 10px;
 }
+.playlist-btn-rp img {
+    width: 60px;
+    height: 60px;
+}
 .playlist-btn-rp img:hover,.playlist-btn-like img:hover, .playlist-btn-download img:hover, .playlist-btn-3dot :hover{
     transform: scale(1.1);
     cursor: pointer;
@@ -269,6 +273,7 @@ body {
     }
 }
 .playlist-song-container {
+    height: 100%;
     color: white;
     background-color: var(--background-color);
 }
@@ -677,8 +682,6 @@ body {
 .fav-song-info {
     width: 200px;
 }
-
-
 .song-add-left:hover {
     cursor: pointer;
     background-color: #3d3d3d;
@@ -723,9 +726,63 @@ body {
     display: none;
 }
 /* Thanh tìm kiếm  */
+.input {
+    background: transparent;
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid white;
+}
 .input:hover {
+    background: white;
     cursor: pointer;
+    border-radius: 0;
 }
 .icon {
     color: white;
 }
+.group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    max-width: 190px;
+   }
+   
+.input {
+    width: 100%;
+    height: 32px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #0d0c22;
+    transition: .3s ease;
+}
+
+.input::placeholder {
+    color: #9e9ea7;
+}
+   
+.input:focus, input:hover {
+    outline: none;
+    border-color: #2d3436;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px #2d3436;
+}
+   
+.icon {
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
+}
+   
+   
+   
+   
+   
+   

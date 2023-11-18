@@ -733,3 +733,17 @@ body {
     font-size: 25px;
     display: none;
 }
+/* Thanh tìm kiếm  */
+.input {
+    background: transparent;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+.input:hover {
+    background: white;
+    cursor: pointer;
+}
+.icon {
+    color: white;
+}

@@ -387,3 +387,169 @@ var downSong = [
         "song_src":"https://github.com/dgeniust/audio-data/raw/main/anhlaai.mp3"
     }
 ]
+
+// let storageSong = []
+let storage;
+// function renderSongList(listUsers, customer) 
+// {
+//     storageSong = customer.map(function(user){
+//         // console.log(user);
+//         //Tạo storage 
+//         storage = document.createElement("tr");
+//         storage.classList.add("song-add-left");
+//         //stt 
+//         const stt = document.createElement("td");
+//         const number = document.createElement("p");
+//         number.classList.add("stt");
+//         number.innerText = user.song_stt;
+//         stt.classList.add("song-stt");
+//         stt.appendChild(number);
+//         //my_btn
+//         const divBTN = document.createElement("div");
+//         const myBTN = document.createElement("button");
+//         myBTN.classList.add("my-btn");
+//         const imgBTN = document.createElement("i");
+//         imgBTN.classList.add("bi-play-circle-fill");
+//         myBTN.appendChild(imgBTN);
+//         divBTN.appendChild(myBTN);
+//         stt.appendChild(divBTN);
+//         //song-title
+//         const title = document.createElement("td");
+//         title.classList.add("song-title")
+//         const image = document.createElement("div");
+//         image.classList.add("song-image");
+//         const imgSong = document.createElement("img");
+//         imgSong.src = user.song_image;
+//         image.appendChild(imgSong);
+
+//         const info = document.createElement("div");
+//         info.classList.add("song-name-artist");
+//         const name = document.createElement("div");
+//         name.classList.add("song-name");
+//         name.innerHTML = user.song_name;
+//         const artist = document.createElement("div");
+//         artist.classList.add("song-artist");
+//         artist.innerHTML = user.song_artist;
+//         info.appendChild(name);
+//         info.appendChild(artist);
+
+//         title.appendChild(image);
+//         title.appendChild(info);
+//         //song-view
+//         const view = document.createElement('td');
+//         view.classList.add('song-view');
+//         view.innerHTML = user.song_view;
+//         //song-duration 
+//         const duration = document.createElement('td');
+//         duration.classList.add('song-duration');
+//         duration.innerHTML = user.song_durations;
+
+//         storage.appendChild(stt);
+//         storage.appendChild(title);
+//         storage.appendChild(view);
+//         storage.appendChild(duration);
+
+//         // console.log(storage);
+
+//         listUsers.appendChild(storage);
+//     })
+// }
+// const sortTitle = document.getElementById('sort-title');
+// const idSorted = document.getElementById('id-sort');
+let customer;
+const listUsers = document.getElementById('list-users');
+// // let sortable = [];
+async function layData(){
+    const response = await fetch("https://raw.githubusercontent.com/dgeniust/audio-data/main/ply.json?token=GHSAT0AAAAAACKN3NCZYY4D3MV6QPCC4RMAZKYGP6A");
+    customer = await response.json();
+    storageSong = customer.map(function(user){
+        // console.log(user);
+        //Tạo storage 
+        storage = document.createElement("tr");
+        storage.classList.add("song-add-left");
+        //stt 
+        const stt = document.createElement("td");
+        const number = document.createElement("p");
+        number.classList.add("stt");
+        number.innerText = user.song_stt;
+        stt.classList.add("song-stt");
+        stt.appendChild(number);
+        //my_btn
+        const divBTN = document.createElement("div");
+        const myBTN = document.createElement("button");
+        myBTN.classList.add("my-btn");
+        const imgBTN = document.createElement("i");
+        imgBTN.classList.add("bi-play-circle-fill");
+        myBTN.appendChild(imgBTN);
+        divBTN.appendChild(myBTN);
+        stt.appendChild(divBTN);
+        //song-title
+        const title = document.createElement("td");
+        title.classList.add("song-title")
+        const image = document.createElement("div");
+        image.classList.add("song-image");
+        const imgSong = document.createElement("img");
+        imgSong.src = user.song_image;
+        image.appendChild(imgSong);
+
+        const info = document.createElement("div");
+        info.classList.add("song-name-artist");
+        const name = document.createElement("div");
+        name.classList.add("song-name");
+        name.innerHTML = user.song_name;
+        info.appendChild(name);
+
+        title.appendChild(image);
+        title.appendChild(info);
+        //song-view
+        const view = document.createElement('td');
+        view.classList.add('song-view');
+        view.innerHTML = user.song_view;
+        //song-duration 
+        const duration = document.createElement('td');
+        duration.classList.add('song-duration');
+        duration.innerHTML = user.song_durations;
+
+        storage.appendChild(stt);
+        storage.appendChild(title);
+        storage.appendChild(view);
+        storage.appendChild(duration);
+        listUsers.appendChild(storage);
+    })
+}
+
+layData();
+// const searchInput = document.getElementById('searching');
+// searchInput.addEventListener('input', function(e) {
+//     const value = e.target.value.toLowerCase();
+//     console.log(value)
+//     listUsers.innerHTML = "";
+//     const filtered = customer.filter(user => {
+//         const isVisible = user.song_name.toLowerCase().includes(value.toLowerCase()) || user.song_artist.toLowerCase().includes(value.toLowerCase())
+//         return isVisible
+//     })
+//     renderSongList(listUsers,filtered);
+// })
+
+// sortTitle.addEventListener('click', function(){
+//     listUsers.innerHTML ="";
+//     const sorted = customer.sort((a, b) => {
+//         const nameA = a.song_name.toUpperCase();
+//         const nameB = b.song_name.toUpperCase();
+//         if(nameA < nameB)
+//             return -1;
+//         if(nameA > nameB)
+//             return 1;
+//         return 0;
+//     })
+//     renderSongList(listUsers, sorted);
+//     console.log(sorted)
+// })
+// idSorted.addEventListener('click', function(){
+//     listUsers.innerHTML ="";
+//     const sorted = customer.sort((a, b) => 
+//         a.song_stt - b.song_stt
+//     );
+//     renderSongList(listUsers, sorted);
+//     console.log(sorted)
+// })

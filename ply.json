@@ -1,0 +1,58 @@
+[
+    {
+        "song_stt":1,
+        "song_image":"./img/anhlangoailecuaem.jpeg",
+        "song_name" : "Anh là ngoại lệ của em",
+        "song_artist" : "Phương Ly",
+        "song_view" : "3,619,056",
+        "song_durations" :"3:08"
+    },
+    {
+        "song_stt":2,
+        "song_image":"./img/thangdien.jpeg",
+        "song_name" : "Thằng điên",
+        "song_artist" : "Phương Ly",
+        "song_view" : "14,839,805",
+        "song_durations" :"3:54"
+    },
+    {
+        "song_stt":3,
+        "song_image":"./img/thichthich.jpeg",
+        "song_name" : "ThichThich",
+        "song_artist" : "Phương Ly",
+        "song_view" : "13,210,178",
+        "song_durations" :"4:01"
+    },
+    {
+        "song_stt":4,
+        "song_image":"./img/mattroicuaem.jpeg",
+        "song_name" : "Mặt trời của em",
+        "song_artist" : "Phương Ly",
+        "song_view" : "7,001,477",
+        "song_durations" :"4:09"
+    },
+    {
+        "song_stt":5,
+        "song_image":"./img/missingyou.jpeg",
+        "song_name" : "Missing You",
+        "song_artist" : "Phương Ly",
+        "song_view" : "12,175,165",
+        "song_durations" :"4:02"
+    },
+    {
+        "song_stt":6,
+        "song_image":"./img/soclose.jpeg",
+        "song_name" : "So Close",
+        "song_artist" : "Phương Ly",
+        "song_view" : "7,471,425",
+        "song_durations" :"3:19"
+    },
+    {
+        "song_stt":7,
+        "song_image":"./img/anhlaai.jpeg",
+        "song_name" : "Anh là ai",
+        "song_artist" : "Phương Ly",
+        "song_view" : "1,636,583",
+        "song_durations" :"4:17"
+    }
+]
