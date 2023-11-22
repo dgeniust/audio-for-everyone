@@ -76,7 +76,7 @@ let users;
 const usersList = document.getElementById('users-list').children[0];
 let sortable = [];
 async function layDuLieu(){
-    const response = await fetch("https://raw.githubusercontent.com/dgeniust/audio-data/main/data.json?token=GHSAT0AAAAAACKN3NCYW7WKVL4G4TSMO65EZK5XVIQ");
+    const response = await fetch("https://raw.githubusercontent.com/dgeniust/audio-data/main/data.json?token=GHSAT0AAAAAACKN3NCZ2UMMQCIOW5ZYCAWOZK6AHTA");
     users = await response.json();
     usersSong = users.map(function(user){
         // console.log(user);
@@ -144,8 +144,33 @@ async function layDuLieu(){
     })
 }
 
-layDuLieu();
+//layDuLieu();
 
+const items = usersList.querySelectorAll(".song-add-left");
 
-const draggables = document.body.getElementsByClassName('.song-add-left');
-console.log(draggables.children);
+items.forEach(item => {
+    item.addEventListener("dragstart", () => {
+        // Adding dragging class to item after a delay
+        setTimeout(() => item.classList.add("dragging"), 0);
+    });
+    // Removing dragging class from item on dragend event
+    item.addEventListener("dragend", () => item.classList.remove("dragging"));
+});
+
+const initusersList = (e) => {
+    e.preventDefault();
+    const draggingItem = document.querySelector(".dragging");
+    // Getting all items except currently dragging and making array of them
+    let siblings = [...usersList.querySelectorAll(".item:not(.dragging)")];
+
+    // Finding the sibling after which the dragging item should be placed
+    let nextSibling = siblings.find(sibling => {
+        return e.clientY <= sibling.offsetTop + sibling.offsetHeight / 2;
+    });
+
+    // Inserting the dragging item before the found sibling
+    usersList.insertBefore(draggingItem, nextSibling);
+}
+
+usersList.addEventListener("dragover", initusersList);
+usersList.addEventListener("dragenter", e => e.preventDefault());
